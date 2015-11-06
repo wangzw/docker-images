@@ -11,7 +11,7 @@ RUN /tmp/install-repo.sh
 RUN yum install -y man passwd sudo tar which git mlocate links \
  autoconf automake automake14 libtool m4 gcc gcc-c++ bison flex \
  libuuid-devel krb5-devel libgsasl-devel expat-devel libxml2-devel \
- perl-ExtUtils-Embed pam-devel python-devel \
+ perl-ExtUtils-Embed pam-devel python-devel cmake \
  bzip2-devel openssl-devel fuse-devel readline-devel pstack python-pip \
  apache-maven apache-ivy java-1.7.0-openjdk-devel \
  devtoolset-3-gcc-c++ devtoolset-3-gcc && \
