@@ -23,6 +23,14 @@ RUN curl -L "https://cmake.org/files/v3.3/cmake-3.3.2-Linux-x86_64.tar.gz" -o cm
  rm -rf cmake-3.3.2-Linux-x86_64 && \
  rm -rf cmake.tar.gz
 
+RUN pushd /tmp && \
+curl -s -L "https://github.com/google/flatbuffers/archive/v1.2.0.tar.gz" -o /tmp/flatbuffers.tar.gz && \
+tar -xzf /tmp/flatbuffers.tar.gz && \
+cd flatbuffers-1.2.0 && cmake . && make install && cd - && ldconfig && \
+rm -rf flatbuffers* && \
+popd
+
+
 RUN /tmp/setup-system.sh
 
 WORKDIR /home/wangzw/
