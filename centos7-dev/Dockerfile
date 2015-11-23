@@ -33,7 +33,7 @@ popd
 
 RUN /tmp/setup-system.sh
 
-WORKDIR /home/wangzw/
+# WORKDIR /home/wangzw/
 
-USER wangzw
+# USER wangzw
 CMD bash
