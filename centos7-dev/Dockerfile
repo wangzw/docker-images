@@ -31,6 +31,7 @@ cd flatbuffers-1.2.0 && cmake . && make install && cd - && ldconfig && \
 rm -rf flatbuffers* && \
 popd
 
+COPY clang-format /usr/bin/clang-format
 
 RUN /tmp/setup-system.sh
 
