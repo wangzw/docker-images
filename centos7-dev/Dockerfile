@@ -7,7 +7,8 @@ COPY setup-system.sh /tmp/setup-system.sh
 
 RUN /tmp/install-repo.sh
 
-RUN yum install -y man passwd sudo tar which git mlocate make links \
+RUN yum -y swap -- remove systemd-container systemd-container-libs -- install systemd systemd-libs && \
+ yum install -y man passwd sudo tar which git mlocate make links \
  autoconf automake libtool m4 gcc gcc-c++ bison flex lcov \
  libuuid-devel krb5-devel libgsasl-devel expat-devel libxml2-devel \
  perl-ExtUtils-Embed pam-devel python-devel protobuf-devel \
