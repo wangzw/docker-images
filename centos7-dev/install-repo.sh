@@ -9,3 +9,5 @@ cat <<EOF > /etc/profile.d/java.sh
 export JAVA_HOME=/etc/alternatives/java_sdk
 EOF
 
+curl -L "https://bintray.com/wangzw/rpm/rpm" -o /etc/yum.repos.d/bintray-wangzw-rpm.repo
+

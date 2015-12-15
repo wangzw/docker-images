@@ -12,7 +12,7 @@ RUN yum install -y man passwd sudo tar which git mlocate make links \
  libuuid-devel krb5-devel libgsasl-devel expat-devel libxml2-devel \
  perl-ExtUtils-Embed pam-devel python-devel protobuf-devel \
  bzip2-devel openssl-devel fuse-devel readline-devel gdb python-pip \
- clang-analyzer clang-devel llvm-devel lldb-devel \
+ llvm-clang \
  maven apache-ivy java-1.7.0-openjdk-devel && \
  yum clean all
 
@@ -30,8 +30,6 @@ tar -xzf /tmp/flatbuffers.tar.gz && \
 cd flatbuffers-1.2.0 && cmake . && make install && cd - && ldconfig && \
 rm -rf flatbuffers* && \
 popd
-
-COPY clang-format /usr/bin/clang-format
 
 RUN /tmp/setup-system.sh
 
