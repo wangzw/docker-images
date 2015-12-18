@@ -13,7 +13,7 @@ RUN yum -y swap -- remove systemd-container systemd-container-libs -- install sy
  libuuid-devel krb5-devel libgsasl-devel expat-devel libxml2-devel \
  perl-ExtUtils-Embed pam-devel python-devel protobuf-devel \
  bzip2-devel openssl-devel fuse-devel readline-devel gdb python-pip \
- llvm-clang \
+ llvm-clang valgrind \
  maven apache-ivy java-1.7.0-openjdk-devel && \
  yum clean all
 
