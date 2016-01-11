@@ -12,5 +12,7 @@ RUN chmod 400 /root/.ssh/authorized_keys \
 
 COPY entrypoint.sh /usr/bin/entrypoint.sh
 
+EXPOSE 22
+
 ENTRYPOINT ["entrypoint.sh"]
 CMD ["bash"]
