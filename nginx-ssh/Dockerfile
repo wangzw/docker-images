@@ -15,4 +15,4 @@ COPY entrypoint.sh /usr/bin/entrypoint.sh
 EXPOSE 22
 
 ENTRYPOINT ["entrypoint.sh"]
-CMD ["bash"]
+CMD ["nginx", "-g", "daemon off;"]
