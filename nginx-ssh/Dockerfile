@@ -12,7 +12,9 @@ COPY id_rsa.pub /home/repo/.ssh/authorized_keys
 
 RUN chmod 400 /home/repo/.ssh/authorized_keys \
   && chmod 700 /home/repo/.ssh \
-  && chown -R repo:repo /home/repo/.ssh
+  && chown -R repo:repo /home/repo/.ssh \
+  && ln -s /usr/share/nginx/html /repo_root \
+  && chown repo:repo /repo_root
 
 COPY entrypoint.sh /usr/bin/entrypoint.sh
 
