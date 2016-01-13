@@ -3,12 +3,16 @@ MAINTAINER Zhanwei Wang <wangzw@wangzw.org>
 
 RUN apt-get update \
   && apt-get install -y openssh-server
+  
+# create user repo for security reason
+RUN groupadd -g 1000 repo && \
+ useradd -u 1000 -g 1000 repo && \
 
-COPY id_rsa.pub /root/.ssh/authorized_keys
+COPY id_rsa.pub /home/repo/.ssh/authorized_keys
 
-RUN chmod 400 /root/.ssh/authorized_keys \
-  && chmod 700 /root/.ssh \
-  && chown -R root:root /root/.ssh
+RUN chmod 400 /home/repo/.ssh/authorized_keys \
+  && chmod 700 /home/repo/.ssh \
+  && chown -R repo:repo /home/repo/.ssh
 
 COPY entrypoint.sh /usr/bin/entrypoint.sh
 
