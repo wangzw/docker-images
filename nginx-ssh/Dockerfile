@@ -6,7 +6,7 @@ RUN apt-get update \
   
 # create user repo for security reason
 RUN groupadd -g 1000 repo && \
- useradd -u 1000 -g 1000 repo && \
+ useradd -u 1000 -g 1000 repo
 
 COPY id_rsa.pub /home/repo/.ssh/authorized_keys
 
